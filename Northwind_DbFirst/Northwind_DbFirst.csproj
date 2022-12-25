@@ -8,6 +8,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Include="NorthwindTemplate.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>NorthwindTemplate.tt</DependentUpon>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Pluralize.NET" Version="1.0.2" />
 		<PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
 	</ItemGroup>
@@ -15,17 +23,20 @@
 	<ItemGroup>
 		<None Update="NorthwindTemplate.tt">
 			<Generator>TextTemplatingFileGenerator</Generator>
-			<LastGenOutput>NorthwindTemplate.txt</LastGenOutput>
-		</None>
-		<None Update="NorthwindTemplate.txt">
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
-			<DependentUpon>NorthwindTemplate.tt</DependentUpon>
+			<LastGenOutput>NorthwindTemplate.cs</LastGenOutput>
 		</None>
 	</ItemGroup>
 
 	<ItemGroup>
 		<Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="NorthwindTemplate.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>NorthwindTemplate.tt</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>
